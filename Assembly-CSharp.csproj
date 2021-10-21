@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\AudioManager\Music_System\Music_Player\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Observer\Notifiers\NotifierInt.cs" />
     <Compile Include="Assets\Scripts\AudioManager\Music_System\Music_Player\MusicPlayer.cs" />
+    <Compile Include="Assets\Scripts\HUD.cs" />
     <Compile Include="Assets\Scripts\Observer\Notifiers\NotifierVector3.cs" />
     <Compile Include="Assets\Scripts\CustomVariables\FloatReference\FloatVariable.cs" />
     <Compile Include="Assets\Scripts\Easing\Base Class\EasingBase.cs" />
@@ -73,10 +74,14 @@
     <Compile Include="Assets\Scripts\CustomVariables\IntReference\IntReference.cs" />
     <Compile Include="Assets\Scripts\Observer\Observers\ObserverVector2.cs" />
     <Compile Include="Assets\Scripts\Observer\Observers\ObserverInt.cs" />
+    <Compile Include="Assets\Scripts\Save.cs" />
     <Compile Include="Assets\Scripts\AudioManager\Music_System\Music_Event\MusicEvent.cs" />
     <Compile Include="Assets\Scripts\AudioManager\SFX_System\Pool\AudioSourcesPool.cs" />
     <Compile Include="Assets\Scripts\Observer\Observers\ObserverString.cs" />
+    <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Easing\Easing Types\EasingTextColor.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\AudioManager\SFX_System\SFX_Event\SFXEvent.cs" />
     <Compile Include="Assets\Scripts\Observer\Notifiers\NotifierFloat.cs" />
     <Compile Include="Assets\Scripts\CustomVariables\StringReference\StringReference.cs" />
@@ -85,9 +90,11 @@
     <Compile Include="Assets\Scripts\AudioManager\SFX_System\CustomVariable\MinMaxRangeAttribute.cs" />
     <Compile Include="Assets\Scripts\Observer\Observers\ObserverGameObject.cs" />
     <Compile Include="Assets\Scripts\Observer\Observers\ObserverVector3.cs" />
+    <Compile Include="Assets\Scripts\SaveManager.cs" />
     <Compile Include="Assets\Scripts\CustomVariables\FloatReference\FloatReference.cs" />
     <Compile Include="Assets\Scripts\Observer\Observers\ObserverBool.cs" />
     <Compile Include="Assets\Scripts\Observer\Notifiers\NotifierVector2.cs" />
+    <Compile Include="Assets\Scripts\Collectible.cs" />
     <Compile Include="Assets\Scripts\Easing\Easing Types\EasingPosition.cs" />
     <Compile Include="Assets\Scripts\Easing\Easing Types\EasingScale.cs" />
     <Compile Include="Assets\Scripts\CustomVariables\BoolReference\BoolReference.cs" />
@@ -95,13 +102,7 @@
     <Compile Include="Assets\Scripts\Observer\Observers\Observer.cs" />
     <Compile Include="Assets\Scripts\Observer\Notifiers\NotifierGameObject.cs" />
     <Compile Include="Assets\Scripts\Easing\Easing Types\EasingColor.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\HUD.cs" />
-    <Compile Include="Assets\Scripts\SaveManager.cs" />
-    <Compile Include="Assets\Scripts\Save.cs" />
-    <Compile Include="Assets\Scripts\Collectible.cs" />
-    <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\Music.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

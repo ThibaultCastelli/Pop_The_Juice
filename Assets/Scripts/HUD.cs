@@ -26,11 +26,7 @@ public class HUD : MonoBehaviour
     {
         scoreColor = scoreTxt.color;
         highScoreColor = highScoreTxt.color;
-    }
-
-    private void Start()
-    {
-        UpdateScore(true);
+        GameStart(false);
     }
     #endregion
 

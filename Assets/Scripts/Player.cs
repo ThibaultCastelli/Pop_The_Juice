@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     [Header("MOVEMENT")]
     [SerializeField] [Range(30f, 100f)] float startSpeed = 50f;
     [SerializeField] [Range(50f, 300f)] float maxSpeed = 100f;
-    [SerializeField] [Range(0f, 5f)] float speedBonus = 1.1f;
+    [SerializeField] [Range(0f, 50f)] float speedBonus = 10f;
+    [SerializeField] [Range(0f, 50f)] float minSpeedBonus = 3f;
     [SerializeField] [Range(30f, 100f)] float menuSpeed = 70f;
     [Space]
 
@@ -54,7 +55,8 @@ public class Player : MonoBehaviour
             else
             {
                 _currentDir *= -1;
-                _currentSpeed = Mathf.Clamp(_currentSpeed * speedBonus, 0, maxSpeed);
+                _currentSpeed = Mathf.Clamp(_currentSpeed + speedBonus, 0, maxSpeed);
+                speedBonus = Mathf.Clamp(--speedBonus, minSpeedBonus, 100);
 
                 onPressSpace.Notify(_isOnCollectible);
                 _hasPressedSpace = true;
