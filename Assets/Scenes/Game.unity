@@ -308,7 +308,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 3.71}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.4
 --- !u!50 &211161071
 Rigidbody2D:
   serializedVersion: 4
@@ -1642,7 +1642,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 3.72}
-  m_Size: {x: 0.68, y: 1.4}
+  m_Size: {x: 0.74, y: 1.4}
   m_Direction: 0
 --- !u!114 &1322435014
 MonoBehaviour:
@@ -1657,7 +1657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: 70
-  maxSpeed: 200
+  maxSpeed: 250
   speedBonus: 1.15
   menuSpeed: 90
   onPressSpace: {fileID: 11400000, guid: e4a68a5c02ed5a44b9cd119e663084e6, type: 2}

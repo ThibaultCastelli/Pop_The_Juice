@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     #region Variables
     [Header("MOVEMENT")]
     [SerializeField] [Range(30f, 100f)] float startSpeed = 50f;
-    [SerializeField] [Range(50f, 200f)] float maxSpeed = 100f;
+    [SerializeField] [Range(50f, 300f)] float maxSpeed = 100f;
     [SerializeField] [Range(0f, 5f)] float speedBonus = 1.1f;
     [SerializeField] [Range(30f, 100f)] float menuSpeed = 70f;
     [Space]
@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     float _currentDir = 1;
 
     bool _isOnCollectible = false;
+    bool _hasPressedSpace = false;
 
     public float CurrentDir => _currentDir;
     public float CurrentSpeed => _currentSpeed;
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour
                 _currentSpeed = Mathf.Clamp(_currentSpeed * speedBonus, 0, maxSpeed);
 
                 onPressSpace.Notify(_isOnCollectible);
+                _hasPressedSpace = true;
             }
         }
 
@@ -72,6 +74,11 @@ public class Player : MonoBehaviour
     {
         if (collision.tag == "Collectible")
             _isOnCollectible = false;
+
+        if (!_hasPressedSpace)
+            onPressSpace.Notify(false);
+
+        _hasPressedSpace = false;
     }
     #endregion
 
