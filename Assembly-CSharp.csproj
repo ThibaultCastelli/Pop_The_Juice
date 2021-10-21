@@ -99,10 +99,11 @@
     <Compile Include="Assets\Scripts\Easing\Easing Types\EasingScale.cs" />
     <Compile Include="Assets\Scripts\CustomVariables\BoolReference\BoolReference.cs" />
     <Compile Include="Assets\Scripts\Observer\Observers\ObserverFloat.cs" />
+    <Compile Include="Assets\Scripts\Music.cs" />
     <Compile Include="Assets\Scripts\Observer\Observers\Observer.cs" />
     <Compile Include="Assets\Scripts\Observer\Notifiers\NotifierGameObject.cs" />
     <Compile Include="Assets\Scripts\Easing\Easing Types\EasingColor.cs" />
-    <Compile Include="Assets\Scripts\Music.cs" />
+    <Compile Include="Assets\Scripts\SFX.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] NotifierBool onGameStart;
 
     bool _isGameStart;
+    bool _canPressSpace;
 
     float _currentSpeed;
     float _currentDir = 1;
@@ -38,21 +39,24 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        // TO DO : STOP GAME WHEN PASSING BY A COLLECTIBLE AND NOT PRESSING SPACE
+        transform.Rotate(Vector3.forward, _currentSpeed * _currentDir * Time.deltaTime);
 
-        if (!_isGameStart && transform.rotation.eulerAngles.z >= 350)
+        if (!_canPressSpace)
+            return;
+
+        if (!_isGameStart && transform.rotation.eulerAngles.z >= 350)   // Auto start on menu
             onGameStart.Notify(true);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!_isGameStart)
+            if (!_isGameStart)  // Menu state
             {
                 if (transform.rotation.eulerAngles.z <= 125 || transform.rotation.eulerAngles.z >= 235)
                     onGameStart.Notify(true);
                 else
                     Application.Quit();
             }
-            else
+            else               // Game state
             {
                 _currentDir *= -1;
                 _currentSpeed = Mathf.Clamp(_currentSpeed + speedBonus, 0, maxSpeed);
@@ -62,8 +66,6 @@ public class Player : MonoBehaviour
                 _hasPressedSpace = true;
             }
         }
-
-        transform.Rotate(Vector3.forward, _currentSpeed * _currentDir * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -100,7 +102,16 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Euler(Vector3.zero);
             _currentDir = 1;
             _currentSpeed = menuSpeed;
+
+            _canPressSpace = false;
+            StartCoroutine(CanPressSpace());
         }
+    }
+
+    IEnumerator CanPressSpace()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _canPressSpace = true;
     }
     #endregion
 }

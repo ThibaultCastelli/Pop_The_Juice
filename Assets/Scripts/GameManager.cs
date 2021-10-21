@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Start & Updates
-    private void Awake()
+    private void Start()
     {
         score.Value = 0;
         onStartGame.Notify(false);
