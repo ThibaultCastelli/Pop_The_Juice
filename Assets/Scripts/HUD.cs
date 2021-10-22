@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using CustomVariablesTC;
 using TMPro;
+using EasingTC;
 
 public class HUD : MonoBehaviour
 {
@@ -17,6 +17,10 @@ public class HUD : MonoBehaviour
     [SerializeField] TextMeshProUGUI highScoreTxt;
     [SerializeField] TextMeshProUGUI highScoreTxt2;
     [SerializeField] GameObject middleLine;
+    [Space]
+
+    [Header("ANIMATIONS")]
+    [SerializeField] EasingScale easingScale;
 
     Color scoreColor;
     Color highScoreColor;
@@ -47,6 +51,7 @@ public class HUD : MonoBehaviour
             return;
 
         StartCoroutine(PrintScores());
+        easingScale.PlayAnimation();
     }
 
     // Observer of OnGameStart

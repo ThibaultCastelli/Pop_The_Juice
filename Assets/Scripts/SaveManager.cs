@@ -45,5 +45,12 @@ public class SaveManager : MonoBehaviour
         string json = JsonUtility.ToJson(_save);
         File.WriteAllText(_path, json);
     }
+
+    // Observer of OnGameStart
+    public void StartGame(bool isGameStart)
+    {
+        if (isGameStart)
+            highScore.Value = _save.highScore;
+    }
     #endregion
 }

@@ -30,7 +30,7 @@ namespace EasingTC
                     prevColor = image.color;
             }
             else
-                prevColor = renderer.material.color;
+                prevColor = renderer.sharedMaterial.color;
         }
 
         public override void OnInspectorGUI()
@@ -93,14 +93,14 @@ namespace EasingTC
                 if (!prevColorFlag)
                 {
                     if (renderer != null)
-                        prevColor = renderer.material.color;
+                        prevColor = renderer.sharedMaterial.color;
                     else
                         prevColor = image.color;
                 }
                 prevColorFlag = true;
 
                 if (renderer != null)
-                    renderer.material.color = _target.endColor;
+                    renderer.sharedMaterial.color = _target.endColor;
                 else
                     image.color = _target.endColor;
             }
@@ -109,14 +109,14 @@ namespace EasingTC
                 if (prevColorFlag)
                 {
                     if (renderer != null)
-                        renderer.material.color = prevColor;
+                        renderer.sharedMaterial.color = prevColor;
                     else
                         image.color = prevColor;
                 }
                 prevColorFlag = false;
 
                 if (renderer != null)
-                    prevColor = renderer.material.color;
+                    prevColor = renderer.sharedMaterial.color;
                 else
                     prevColor = image.color;
             }
